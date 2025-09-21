@@ -4,8 +4,8 @@ const products = [
         id: 1,
         name: "Serum Vitamin C Cao Cấp",
         category: "skincare",
-        price: 450000,
-        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        price: 4550000,
+        image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         description: "Serum vitamin C với công thức đặc biệt giúp làm sáng da, giảm thâm nám và chống lão hóa hiệu quả."
     },
     {
