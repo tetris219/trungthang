@@ -57,7 +57,11 @@ body {
 
 .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-.card__img { aspect-ratio: 1/1; width: 100%; object-fit: cover; background: #f0f0f0; }
+.card__media { position: relative; }
+.card__img { aspect-ratio: 1/1; width: 100%; object-fit: cover; background: #f0f0f0; display: block; }
+.card__media.has-overlay .card__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)); color: #fff; opacity: 0; transition: opacity .2s ease-in-out; display: flex; align-items: flex-end; }
+.card__media.has-overlay:hover .card__overlay { opacity: 1; }
+.card__overlay-content { padding: 10px; font-size: 12px; line-height: 1.5; max-height: 70%; overflow: auto; }
 .card__body { padding: 10px; display: grid; gap: 8px; }
 .price { display: flex; align-items: baseline; gap: 8px; }
 .price__current { color: var(--brand); font-weight: 700; }

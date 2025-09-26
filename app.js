@@ -7,19 +7,19 @@ const qsa = (sel, el = document) => Array.from(el.querySelectorAll(sel));
 // Data (example)
 const categories = [
   'Tất cả',
-  'Điện thoại',
-  'Laptop',
-  'Phụ kiện',
-  'Thời trang',
-  'Nhà cửa',
-  'Sức khỏe',
-  'Thể thao'
+  'SÉT DƯỠNG DA',
+  'KEM CHỐNG NẮNG',
+  'SỮA RỬA MẶT',
+  'NƯỚC TẨY TRANG',
+  'DẦU GỘI',
+  'THỰC PHẨM CHỨC NĂNG',
+  'SÂM NẤM'
 ];
 
 const products = [
-  { id: 'p1', name: 'Điện thoại XPhone 12 128GB', category: 'Điện thoại', price: 12500000, priceOld: 14990000, rating: 4.7, image: 'https://picsum.photos/seed/p1/600/600', createdAt: Date.now()-1000*60*60*24*10 },
-  { id: 'p2', name: 'Laptop UltraBook 14" i5 16GB', category: 'Laptop', price: 18990000, priceOld: 21990000, rating: 4.5, image: 'https://picsum.photos/seed/p2/600/600', createdAt: Date.now()-1000*60*60*24*2 },
-  { id: 'p3', name: 'Tai nghe Bluetooth Pro', category: 'Phụ kiện', price: 790000, priceOld: 1290000, rating: 4.3, image: 'https://picsum.photos/seed/p3/600/600', createdAt: Date.now()-1000*60*60*24*20 },
+  { id: 'p1', name: 'SET DƯỠNG SU:M37 VÀNG 9 MÓN MẪU MỚI – TÁI SINH DA, CHỐNG LÃO HÓA', category: 'SÉT DƯỠNG DA', price: 0, priceOld: 14990000, rating: 4.7, image: 'https://bizweb.dktcdn.net/thumb/medium/100/027/493/products/df3164a90c7d40a5a6ec16c546316d34.jpg?v=1755577113620', createdAt: Date.now()-1000*60*60*24*10, hoverDesc: 'Set dưỡng Su:m37 Losec Summa Elixir 9sp – phiên bản mới nhất – dòng cao cấp đình đám giúp tái tạo và trẻ hóa da toàn diện.\n\nCông dụng:\n- Tái tạo, phục hồi da yếu, da mụn, da lão hóa.\n- Chống nhăn, chống chảy xệ, tăng độ đàn hồi và trẻ hóa da.\n- Se khít lỗ chân lông, hỗ trợ trị mụn, làm sáng mịn da.\n- Chiết xuất thiên nhiên, an toàn, không gây kích ứng – kể cả da nhạy cảm.\n\nBộ 9 món cao cấp gồm:\n- Nước hoa hồng 150ml + 20ml\n- Sữa dưỡng 130ml + 20ml\n- Kem Su:m vàng Losec 10ml\n- Tinh chất essence 8ml\n- Kem dưỡng mắt 10ml\n- Sữa rửa mặt Su:m vàng 60ml\n- Nước thần Su:m 12ml\n\nSet dưỡng Su:m vàng – giải pháp toàn diện cho làn da căng mướt, mềm mịn, trẻ trung rạng rỡ.' },
+  { id: 'p2', name: 'Bộ Kem Lót & Kem Nền Su:m37 Summa Losec Make Up Special Set', category: 'SÉT DƯỠNG DA', price: 0, priceOld: 21990000, rating: 4.5, image: 'https://bizweb.dktcdn.net/thumb/medium/100/027/493/products/2777d8d0ca1040a2a89198a701bb5876.jpg?v=1755505456417', createdAt: Date.now()-1000*60*60*24*2, hoverDesc: 'Bộ trang điểm Su:m37 Summa Losec Make Up Special Set là sự kết hợp hoàn hảo giữa kem lót và kem nền chống lão hóa, mang đến lớp trang điểm mịn màng, tự nhiên mà vẫn bảo vệ da toàn diện. Đây là dòng sản phẩm cao cấp của Su:m37, giúp bạn vừa trang điểm chuyên nghiệp, vừa nuôi dưỡng làn da sáng khỏe, tươi trẻ.\n\n✨ Ưu điểm:\n- Kem lót: Kết cấu dạng sệt, thấm nhanh, không nhờn dính. Chứa tinh chất vàng lấp lánh, giúp cấp ẩm, lấp đầy nếp nhăn & lỗ chân lông, tạo lớp nền mềm mịn và bền màu.\n\n- Kem nền: Siêu mịn, che phủ khuyết điểm tự nhiên, mỏng nhẹ, không gây bết dính. Giúp da đều màu, căng bóng, sáng mịn. Tích hợp chống nắng SPF 30/PA++, bảo vệ da khỏi tia UV.\n\n- Giữ lớp makeup lâu trôi, bền tone, mang lại diện mạo rạng rỡ, chuyên nghiệp.\n\n📦 Bộ sản phẩm bao gồm:\n- Kem lót chống lão hóa Su:m37 (20ml)\n- Kem nền chống lão hóa Su:m37 (20ml)\n- Kem dưỡng môi Lipcerin (15ml)\n- 05 sample son dưỡng Skin-Stay 0.5ml\n\n🌸 Công dụng chính\n- Trang điểm chuyên nghiệp, tạo lớp nền mịn đẹp.\n- Bảo vệ da, chống lão hóa, ngăn tác động từ mỹ phẩm và môi trường.\n- Cấp ẩm, dưỡng sáng, chống nắng nhẹ nhàng cho làn da luôn khỏe mạnh.' },
+  { id: 'p3', name: 'Tai nghe Bluetooth Pro', category: 'Phụ kiện', price: 790000, priceOld: 1290000, rating: 4.3, image: 'https://bizweb.dktcdn.net/thumb/medium/100/027/493/products/spanbr-pp-pp-style-text-align-center-27-739ade9d84c04052b80736539f6c4939-grande.jpg?v=1713427236387', createdAt: Date.now()-1000*60*60*24*20 },
   { id: 'p4', name: 'Áo thun Basic Unisex', category: 'Thời trang', price: 99000, priceOld: 149000, rating: 4.2, image: 'https://picsum.photos/seed/p4/600/600', createdAt: Date.now()-1000*60*60*24*1 },
   { id: 'p5', name: 'Bộ nồi Inox 5 món', category: 'Nhà cửa', price: 1290000, priceOld: 1590000, rating: 4.6, image: 'https://picsum.photos/seed/p5/600/600', createdAt: Date.now()-1000*60*60*24*60 },
   { id: 'p6', name: 'Máy massage cổ thông minh', category: 'Sức khỏe', price: 550000, priceOld: 890000, rating: 4.1, image: 'https://picsum.photos/seed/p6/600/600', createdAt: Date.now()-1000*60*60*24*4 },
@@ -30,6 +30,8 @@ const products = [
   { id: 'p11', name: 'Bình giữ nhiệt 900ml', category: 'Nhà cửa', price: 159000, priceOld: 199000, rating: 4.5, image: 'https://picsum.photos/seed/p11/600/600', createdAt: Date.now()-1000*60*60*24*14 },
   { id: 'p12', name: 'Khẩu trang 3D hộp 50 chiếc', category: 'Sức khỏe', price: 79000, priceOld: 99000, rating: 4.3, image: 'https://picsum.photos/seed/p12/600/600', createdAt: Date.now()-1000*60*60*24*40 }
 ];
+// Expose catalog for product detail page
+try { localStorage.setItem('products_v1', JSON.stringify(products)); } catch {}
 
 // State
 let state = {
@@ -165,9 +167,12 @@ function renderProducts(list) {
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <img class="card__img" src="${p.image}" alt="${p.name}" />
+      <a class="card__media${p.hoverDesc ? ' has-overlay' : ''}" href="product.html?id=${p.id}">
+        <img class="card__img" src="${p.image}" alt="${p.name}" />
+        ${p.hoverDesc ? `<div class="card__overlay"><div class="card__overlay-content">${p.hoverDesc.replace(/\n/g, '<br/>')}</div></div>` : ''}
+      </a>
       <div class="card__body">
-        <div class="title" title="${p.name}">${p.name}</div>
+        <a class="title" title="${p.name}" href="product.html?id=${p.id}">${p.name}</a>
         <div class="price">
           <span class="price__current">${VND.format(p.price)}</span>
           ${p.priceOld && p.priceOld > p.price ? `<span class="price__old">${VND.format(p.priceOld)}</span>` : ''}
@@ -175,7 +180,7 @@ function renderProducts(list) {
         <div class="rating">${'★'.repeat(Math.round(p.rating || 0))}${'☆'.repeat(5-Math.round(p.rating || 0))} <span style="color:var(--muted)">(${(p.rating||0).toFixed(1)})</span></div>
         <div class="card__actions">
           <button class="btn btn--primary" data-add="${p.id}">Thêm vào giỏ</button>
-          <button class="btn" data-view="${p.id}">Xem nhanh</button>
+          <a class="btn" href="product.html?id=${p.id}">Xem chi tiết</a>
         </div>
       </div>
     `;
