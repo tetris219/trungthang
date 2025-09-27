@@ -389,4 +389,38 @@ function openCheckout() {
   };
 }
 
+// Image Zoom Modal functionality
+{
+  const modal = byId('imageZoomModal');
+  const zoomedImg = byId('zoomedImage');
+  const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+  // Add click event listeners to zoomable images
+  zoomableImages.forEach(img => {
+    img.addEventListener('click', () => {
+      zoomedImg.src = img.src;
+      zoomedImg.alt = img.alt;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+  });
+
+  // Close modal when clicking overlay or close button
+  const closeModal = () => {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scrolling
+  };
+
+  modal.querySelectorAll('[data-close-modal]').forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
+  });
+}
+
 

@@ -72,7 +72,7 @@ body {
 .footer { background: var(--card); border-top: 1px solid var(--border); }
 .footer__inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
 .footer__inner > div:first-child { display: flex; gap: 8px; align-items: center; }
-.footer__inner img { border-radius: 8px; transition: transform 0.2s ease; }
+.footer__inner img { border-radius: 8px; transition: transform 0.2s ease; cursor: pointer; }
 .footer__inner img:hover { transform: scale(1.1); }
 .footer__links { display: flex; gap: 12px; }
 .footer__links a { color: var(--muted); text-decoration: none; }
@@ -107,6 +107,16 @@ body {
 .order-summary { display: grid; gap: 8px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
 .checkout-form { display: grid; gap: 10px; margin-top: 8px; }
 .checkout-form input { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: #fafafa; }
+
+/* Image Zoom Modal */
+.image-zoom-modal { position: fixed; inset: 0; display: none; z-index: 1000; }
+.image-zoom-modal[aria-hidden="false"] { display: flex; align-items: center; justify-content: center; }
+.image-zoom-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.8); }
+.image-zoom-content { position: relative; max-width: 90vw; max-height: 90vh; }
+.image-zoom-content img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
+.image-zoom-close { position: absolute; top: -40px; right: 0; background: rgba(255,255,255,0.9); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.zoomable-image { cursor: pointer; transition: transform 0.2s ease; }
+.zoomable-image:hover { transform: scale(1.05); }
 
 /* Responsive */
 @media (max-width: 1024px) {

@@ -80,14 +80,16 @@
 
     <footer class="footer">
         <div class="container footer__inner">
-            <div>© <span id="year"></span> ShopMini</div> <p style="text-align: center;">
-                <img src="https://i.postimg.cc/W3D0BKPT/z7057071080059-fdac5fe20b77a033d0e79f9d0b82f118.jpg" 
+            <div>© <span id="year"></span> ShopMini</div> 
+            <p style="text-align: center;">
+                <img class="zoomable-image" src="https://i.postimg.cc/W3D0BKPT/z7057071080059-fdac5fe20b77a033d0e79f9d0b82f118.jpg" 
                      alt="Ảnh 1" width="200">
-              </p>
-            <div class="footer__links"> <p style="text-align: center;">
-                <img src="https://i.postimg.cc/HxWbLRmG/z7057071103949-20ad1f6f90404de1842a7a0d596eea92.jpg" 
-                     alt="Ảnh 2" width="200">
-              </p>
+            </p>
+            <div class="footer__links"> 
+                <p style="text-align: center;">
+                    <img class="zoomable-image" src="https://i.postimg.cc/HxWbLRmG/z7057071103949-20ad1f6f90404de1842a7a0d596eea92.jpg" 
+                         alt="Ảnh 2" width="200">
+                </p>
                 <a href="#">Chính sách</a>
                 <a href="#">Hỗ trợ</a>
                 <a href="#">Liên hệ</a> <div class="contact-info"> 
@@ -155,6 +157,15 @@
                     <button class="btn btn--primary" type="submit">Đặt hàng</button>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div id="imageZoomModal" class="image-zoom-modal" aria-hidden="true">
+        <div class="image-zoom-overlay" data-close-modal></div>
+        <div class="image-zoom-content">
+            <button class="image-zoom-close icon-btn" data-close-modal>✖</button>
+            <img id="zoomedImage" src="" alt="Zoomed Image" />
         </div>
     </div>
 
