@@ -36,6 +36,48 @@ body {
 .topnav__links a { display: inline-block; padding: 8px 12px; border-radius: 999px; background: #fafafa; color: var(--text); text-decoration: none; border: 1px solid var(--border); }
 .topnav__links a.active { background: var(--brand); color: #fff; border-color: var(--brand); }
 
+/* Danh mục nghành hàng và chi tiết */
+.industry-categories, .detail-categories { margin-bottom: 20px; }
+.industry-categories h3, .detail-categories h3 { 
+  margin: 0 0 12px 0; 
+  font-size: 16px; 
+  font-weight: 600; 
+  color: var(--text);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--brand);
+}
+.industry-categories ul, .detail-categories ul { 
+  display: flex; 
+  list-style: none; 
+  gap: 8px; 
+  padding: 0; 
+  margin: 0; 
+  overflow: auto; 
+  flex-wrap: wrap;
+}
+.industry-categories li, .detail-categories li { white-space: nowrap; }
+.industry-categories a, .detail-categories a { 
+  display: inline-block; 
+  padding: 8px 12px; 
+  border-radius: 20px; 
+  background: #f8f9fa; 
+  color: var(--text); 
+  text-decoration: none; 
+  border: 1px solid var(--border); 
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.industry-categories a:hover, .detail-categories a:hover { 
+  background: #e9ecef; 
+  border-color: var(--brand);
+}
+.industry-categories a.active, .detail-categories a.active { 
+  background: var(--brand); 
+  color: #fff; 
+  border-color: var(--brand); 
+  box-shadow: 0 2px 4px rgba(238, 77, 45, 0.3);
+}
+
 .layout { display: grid; grid-template-columns: 260px 1fr; gap: 16px; padding: 16px 0 32px; }
 .sidebar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
 .sidebar h3 { margin: 12px 0; font-size: 16px; }
