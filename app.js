@@ -80,7 +80,18 @@ const products = [
 { id: 'p40', name: 'Xịt Chống Nắng Toàn Thân JMsolution SPF50+ PA++++ 180ml', category: 'XỊT CHỐNG NẮNG', price: 190000, priceOld: 0, rating: 4.7, image: 'https://media.hcdn.vn/catalog/product/o/g/og-image-auto-xit-chong-nang-toan-than-jmsolution-chiet-xuat-hoa-hong-spf50-pa-180ml_1XVgJ2EJFzZy3tDg.png', createdAt: Date.now()-1000*60*60*24*20, hoverDesc: 'Xịt chống nắng JM Solution với chỉ số SPF50+ PA++++, bảo vệ da hiệu quả khỏi tác hại của tia UV. Dưỡng ẩm và làm sáng da, mang lại làn da rạng rỡ suốt cả ngày. Dạng xịt tiện lợi cho cả mặt và toàn thân.' },
 { id: 'p41', name: 'Bọt Tuyết Quyến Rũ Moonlook – Dung Dịch Vệ Sinh Hàn Quốc', category: 'BỌT TUYẾT', price: 240000, priceOld: 0, rating: 4.8, image: 'https://haligroup.vn/wp-content/uploads/2022/09/avt-bot-tuyet-moonlook-phien-ban-moi-1.jpg', createdAt: Date.now()-1000*60*60*24*21, hoverDesc: 'Bọt Tuyết Quyến Rũ Moonlook là sản phẩm mới của nhà Moonlook được chị em phụ nữ yêu thích, đặc biệt được mệnh danh là dung dịch vệ sinh hàng hiệu siêu xịn xò với nhiều công dụng vượt trội.' },
 { id: 'p42', name: 'Kem Dưỡng Trắng Giảm Nám DongSung Rannce Cream 70g', category: 'KEM TRỊ NÁM', price: 490000, priceOld: 0, rating: 4.9, image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m5zepajuo1s346_tn.jpg', createdAt: Date.now()-1000*60*60*24*22, hoverDesc: 'Kem dưỡng trắng, giảm nám Dongsung Rannce Cream Hàn Quốc. Dưỡng da trắng bằng chiết xuất của hoa Chamimile. Ngăn mọi phát triển của sắc tố melanin, ngăn Tyrosinase. Axit Kojic giúp da đều màu, loại bỏ độc tố.' },
-{ id: 'p43', name: 'Kem Dưỡng Da Chiết Xuất Đậu Bắp DONGSUNG RANNCE Okra Cream 50g', category: 'KEM DƯỠNG DA', price: 500000, priceOld: 0, rating: 4.7, image: 'https://hanminhgroup.com/wp-content/uploads/kem-dong-sung-Okra-Cream-scaled.jpg', createdAt: Date.now()-1000*60*60*24*23, hoverDesc: 'Kem dưỡng da chiết xuất đậu bắp DONGSUNG RANNCE Okra Cream. Giảm thiểu nếp nhăn, dưỡng trắng tự nhiên đồng thời bổ sung Collagen giúp tăng độ đàn hồi. Ức chế tổng hợp Melanin, dưỡng ẩm sâu.' },];
+{ id: 'p43', name: 'Kem Dưỡng Da Chiết Xuất Đậu Bắp DONGSUNG RANNCE Okra Cream 50g', category: 'KEM DƯỠNG DA', price: 500000, priceOld: 0, rating: 4.7, image: 'https://hanminhgroup.com/wp-content/uploads/kem-dong-sung-Okra-Cream-scaled.jpg', createdAt: Date.now()-1000*60*60*24*23, hoverDesc: 'Kem dưỡng da chiết xuất đậu bắp DONGSUNG RANNCE Okra Cream. Giảm thiểu nếp nhăn, dưỡng trắng tự nhiên đồng thời bổ sung Collagen giúp tăng độ đàn hồi. Ức chế tổng hợp Melanin, dưỡng ẩm sâu.' },
+{ 
+  id: 'p44', 
+  name: 'Samsung Korean Woohwang Cheongsimwon (An Cung Ngưu Hoàng Hoàn) Hộp Gỗ 60 Viên', 
+  category: 'THỰC PHẨM BỔ SUNG', 
+  price: 1000000, 
+  priceOld: 0, 
+  rating: 4.7, 
+  image: 'http://bizweb.dktcdn.net/thumb/large/100/404/312/products/fdb8cb2983b6751b231fccac4b3c3e25-c233022488f94bf1ad140ab252063541.jpg?v=1696652094430', 
+  createdAt: Date.now()-1000*60*60*24*1, 
+  hoverDesc: 'An Cung Ngưu Hoàng Hoàn Samsung Hàn Quốc hộp gỗ 60 viên giúp hỗ trợ phòng ngừa và điều trị tai biến, cải thiện tuần hoàn máu, giảm đau đầu, chóng mặt, rối loạn tiền đình. Sản phẩm giúp an thần, bổ khí huyết, phục hồi chức năng thần kinh và phòng ngừa đột quỵ.' 
+},];
 // Expose catalog for product detail page 
 try { localStorage.setItem('products_v1', JSON.stringify(products)); } catch {}
 
