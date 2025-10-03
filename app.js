@@ -30,13 +30,6 @@ const categories = [
   'KEM TRỊ NÁM'
 ];
 
-// Danh mục nghành hàng (phần trên)
-const industryCategories = [
-  'MỸ PHẨM',
-  'THỰC PHẨM CHỨC NĂNG',
-  'GIẤY VÀ BỈM',
-  'ĐÁ SÂN VƯỜN',
-];
 
 const products = [
   { id: 'p1', name: 'SET DƯỠNG SU:M37 VÀNG 9 MÓN MẪU MỚI – TÁI SINH DA, CHỐNG LÃO HÓA', category: 'SÉT DƯỠNG DA', price: 0, priceOld: 14990000, rating: 4.7, image: 'https://bizweb.dktcdn.net/thumb/medium/100/027/493/products/df3164a90c7d40a5a6ec16c546316d34.jpg?v=1755577113620', createdAt: Date.now()-1000*60*60*24*10, hoverDesc: 'Set dưỡng Su:m37 Losec Summa Elixir 9sp – phiên bản mới nhất – dòng cao cấp đình đám giúp tái tạo và trẻ hóa da toàn diện.\n\nCông dụng:\n- Tái tạo, phục hồi da yếu, da mụn, da lão hóa.\n- Chống nhăn, chống chảy xệ, tăng độ đàn hồi và trẻ hóa da.\n- Se khít lỗ chân lông, hỗ trợ trị mụn, làm sáng mịn da.\n- Chiết xuất thiên nhiên, an toàn, không gây kích ứng – kể cả da nhạy cảm.\n\nBộ 9 món cao cấp gồm:\n- Nước hoa hồng 150ml + 20ml\n- Sữa dưỡng 130ml + 20ml\n- Kem Su:m vàng Losec 10ml\n- Tinh chất essence 8ml\n- Kem dưỡng mắt 10ml\n- Sữa rửa mặt Su:m vàng 60ml\n- Nước thần Su:m 12ml\n\nSet dưỡng Su:m vàng – giải pháp toàn diện cho làn da căng mướt, mềm mịn, trẻ trung rạng rỡ.' },
@@ -107,7 +100,6 @@ try { localStorage.setItem('products_v1', JSON.stringify(products)); } catch {}
 let state = {
   query: '',
   category: 'Tất cả',
-  industryCategory: '', // Danh mục nghành hàng
   onlyDiscount: false,
   maxPrice: '',
   sort: 'pop',
@@ -133,62 +125,10 @@ function render() {
 }
 
 function mountCategories() {
-  const top = byId('topCategories');
   const side = byId('sideCategories');
   
   // Xóa nội dung cũ
-  top.innerHTML = '';
   side.innerHTML = '';
-
-  // Thêm danh mục nghành hàng (phần trên)
-  const industrySection = document.createElement('div');
-  industrySection.className = 'industry-categories';
-  industrySection.innerHTML = '<h3>NGHÀNH HÀNG</h3>';
-  
-  const industryList = document.createElement('ul');
-  industryCategories.forEach(c => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = '#';
-    a.textContent = c;
-    if (c === state.industryCategory) a.classList.add('active');
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      state.industryCategory = c;
-      state.category = 'Tất cả'; // Reset danh mục chi tiết
-      mountCategories();
-      render();
-    });
-    li.appendChild(a);
-    industryList.appendChild(li);
-  });
-  industrySection.appendChild(industryList);
-  top.appendChild(industrySection);
-
-  // Thêm danh mục chi tiết (phần dưới)
-  const detailSection = document.createElement('div');
-  detailSection.className = 'detail-categories';
-  detailSection.innerHTML = '<h3>DANH MỤC SẢN PHẨM</h3>';
-  
-  const detailList = document.createElement('ul');
-  categories.forEach(c => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = '#';
-    a.textContent = c;
-    if (c === state.category) a.classList.add('active');
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      state.category = c;
-      state.industryCategory = ''; // Reset danh mục nghành hàng
-      mountCategories();
-      render();
-    });
-    li.appendChild(a);
-    detailList.appendChild(li);
-  });
-  detailSection.appendChild(detailList);
-  top.appendChild(detailSection);
 
   // Cập nhật sidebar
   categories.forEach(c => {
@@ -200,7 +140,6 @@ function mountCategories() {
     a.addEventListener('click', (e) => {
       e.preventDefault();
       state.category = c;
-      state.industryCategory = '';
       mountCategories();
       render();
     });
@@ -233,7 +172,6 @@ function bindFilters() {
     state.query = '';
     byId('searchInput').value = '';
     state.category = 'Tất cả';
-    state.industryCategory = '';
     mountCategories();
     render();
   });
@@ -242,19 +180,6 @@ function bindFilters() {
 
 function applyFilters() {
   let list = products.slice();
-  
-  // Lọc theo danh mục nghành hàng
-  if (state.industryCategory) {
-    if (state.industryCategory === 'MỸ PHẨM') {
-      list = list.filter(p => ['SÉT DƯỠNG DA', 'KEM CHỐNG NẮNG', 'SỮA RỬA MẶT', 'NƯỚC TẨY TRANG', 'KEM DƯỠNG DA', 'TẨY DA CHẾT', 'SERUM DƯỠNG DA', 'XỊT CHỐNG NẮNG', 'BỌT TUYẾT', 'KEM TRỊ NÁM'].includes(p.category));
-    } else if (state.industryCategory === 'THỰC PHẨM CHỨC NĂNG') {
-      list = list.filter(p => ['THỰC PHẨM CHỨC NĂNG', 'SÂM NẤM', 'NƯỚC HỒNG SÂM', 'KẸO HỒNG SÂM', 'VIÊN UỐNG', 'VIÊN CANXI'].includes(p.category));
-    } else if (state.industryCategory === 'GIẤY VÀ BỈM') {
-      list = list.filter(p => ['KEM ĐÁNH RĂNG'].includes(p.category));
-    } else if (state.industryCategory === 'ĐÁ SÂN VƯỜN') {
-      list = list.filter(p => ['DẦU GỘI', 'DẦU NÓNG', 'CAO DÁN', 'TINH DẦU'].includes(p.category));
-    }
-  }
   
   // Lọc theo danh mục chi tiết
   if (state.category && state.category !== 'Tất cả') {
